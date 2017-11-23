@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 		--no-install-recommends
 
 # Golang
-ENV GOLANG_VERSION 1.8.3
+ENV GOLANG_VERSION 1.9.2
 RUN wget -O go.tgz https://storage.googleapis.com/golang/go${GOLANG_VERSION}.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go.tgz
 ENV GOPATH /kowala/workspace
