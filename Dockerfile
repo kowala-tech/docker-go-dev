@@ -28,3 +28,6 @@ RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install awsebcli --upgrade --user
 ENV PATH /root/.local/bin:/usr/local/go/bin:$PATH
+
+# Godog
+RUN go get github.com/DATA-DOG/godog/cmd/godog
