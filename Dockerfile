@@ -1,10 +1,14 @@
 FROM golang:1.10.3
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		build-essential \
 		ca-certificates \
-		nodejs \
 		python2.7 \
 		curl
+
+# Nodejs
+RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
+RUN apt-get update && apt-get install -y --no-install-recommends nodejs
 
 # Godog
 RUN go get github.com/DATA-DOG/godog/cmd/godog
