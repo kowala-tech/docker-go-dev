@@ -1,6 +1,10 @@
-FROM golang:1.10.3-alpine3.7
-
-RUN apk update && apk add --update git make gcc build-base musl-dev linux-headers ca-certificates nodejs python2 curl
+FROM golang:1.10.3
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		build-essential \
+		ca-certificates \
+		nodejs \
+		python2.7 \
+		curl
 
 # Godog
 RUN go get github.com/DATA-DOG/godog/cmd/godog
