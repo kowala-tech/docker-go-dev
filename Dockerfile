@@ -19,4 +19,7 @@ RUN curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://download.docker.com/linux
     && rm -rf /tmp/docker-$DOCKER_VERSION /tmp/docker
 
 # Protoc
-RUN go get -u github.com/golang/protobuf/protoc-gen-go
+RUN go get -u github.com/golang/protobuf/protoc-gen-go \
+    && go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway \
+    && go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+
