@@ -1,6 +1,6 @@
 FROM golang:1.9.7-alpine3.7
 
-RUN apk update && apk add --update alpine-sdk git make gcc build-base musl-dev linux-headers ca-certificates nodejs python2 curl
+RUN apk update && apk add --update alpine-sdk git make gcc build-base musl-dev linux-headers ca-certificates nodejs python2 curl protobuf
 
 # Godog
 RUN go get github.com/DATA-DOG/godog/cmd/godog
@@ -18,3 +18,5 @@ RUN curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://download.docker.com/linux
     && mv /tmp/docker/docker /usr/bin \
     && rm -rf /tmp/docker-$DOCKER_VERSION /tmp/docker
 
+# Protoc
+RUN go get -u github.com/golang/protobuf/protoc-gen-go
