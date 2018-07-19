@@ -1,6 +1,8 @@
 FROM golang:1.9.7-alpine3.7
 
-RUN apk update && apk add --update alpine-sdk git make gcc build-base musl-dev linux-headers ca-certificates nodejs python2 curl protobuf
+RUN apk update && apk add --update alpine-sdk git make gcc build-base musl-dev linux-headers ca-certificates nodejs-current-npm python2 curl protobuf
+
+RUN npx npm@5.6 i -g npm@6.2.0
 
 # Godog
 RUN go get github.com/DATA-DOG/godog/cmd/godog
