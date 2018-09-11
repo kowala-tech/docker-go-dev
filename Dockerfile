@@ -10,6 +10,21 @@ RUN go get github.com/DATA-DOG/godog/cmd/godog
 # Dep
 RUN go get github.com/golang/dep/cmd/dep
 
+# Stringer
+RUN go get golang.org/x/tools/cmd/stringer
+
+# Go-bindata
+RUN go get -u github.com/kevinburke/go-bindata/...
+
+# Gencodec
+RUN go get github.com/fjl/gencodec
+
+# Moq
+RUN go get github.com/matryer/moq
+
+# Mockery
+RUN go get github.com/vektra/mockery/...
+
 # solc
 RUN curl -L https://github.com/ethereum/solidity/releases/download/v0.4.24/solc-static-linux -o /bin/solc && chmod +x /bin/solc
 
